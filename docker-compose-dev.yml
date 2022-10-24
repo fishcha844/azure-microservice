@@ -2,10 +2,7 @@ version: "3.8"
  
 services:
   frontend:
-    image: asure-microservice/frontend:latest
-    build: 
-      context: .
-      dockerfile: ./vue-project
+    build: ./vue-project
     ports:
       - 8000:80
     restart: always
@@ -16,10 +13,7 @@ services:
     environment:
       BASE_URL: http://backend:7012
   backend:
-    image: asure-microservice/backend:latest 
-    build: 
-      context: .
-      dockerfile: ./backend
+    build: ./backend
     ports:
       - 7012:7012
     restart: always
