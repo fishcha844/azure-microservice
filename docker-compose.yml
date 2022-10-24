@@ -2,7 +2,6 @@ version: "3.8"
  
 services:
   frontend:
-    image: asuremicroservice10242113/frontend:latest
     build: 
       context: .
       dockerfile: ./vue-project
@@ -16,7 +15,6 @@ services:
     environment:
       BASE_URL: http://backend:7012
   backend:
-    image: asuremicroservice10242113/backend:latest 
     build: 
       context: .
       dockerfile: ./backend
