@@ -2,9 +2,8 @@ version: "3.8"
  
 services:
   frontend:
-    build: 
-      context: .
-      dockerfile: ./vue-project
+    build: ./vue-project
+    image: azuremicroserviceacr10242140.azurecr.io/frontend:latest
     ports:
       - 8000:80
     restart: always
@@ -15,9 +14,8 @@ services:
     environment:
       BASE_URL: http://backend:7012
   backend:
-    build: 
-      context: .
-      dockerfile: ./backend
+    build: ./backend
+    image: azuremicroserviceacr10242140.azurecr.io/backend:latest
     ports:
       - 7012:7012
     restart: always
