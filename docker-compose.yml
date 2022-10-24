@@ -1,0 +1,27 @@
+version: "3.8"
+ 
+services:
+  frontend:
+    build: ./vue-project
+    ports:
+      - 8000:80
+    depends_on:
+      - backend
+    # links:
+    #   - backend
+    environment:
+      BASE_URL: http://backend:7012
+  backend:
+    build: ./backend
+    ports:
+      - 7012:7012
+    # environment: 
+    #   DB_URL: mongodb://db/first_volume
+  # db:
+  #   image: mongo:4.0-xenial
+  #   ports:
+  #     - 27017:27017
+    # volumes:
+    #   - first_volume:/data/db 
+# volumes:
+  # first_volume:
